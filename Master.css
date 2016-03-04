@@ -5,21 +5,27 @@
 }
 
 /*Centers image*/
-IMG.centered {
+IMG.properties {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-#Logo {
-    position: absolute;
+IMG.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    position:absolute;
+    z-index: 1;
 }
 
-#main-image {
+IMG.mainpic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
     position: absolute;
-    z-index: 5;
+    z-index: -1;
 }
 
-.container {
-    position: relative;
-}
