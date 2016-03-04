@@ -1,0 +1,25 @@
+
+#title{
+    color:blue;
+    text-align:CENTER;
+}
+
+/*Centers image*/
+IMG.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Logo {
+    position: absolute;
+}
+
+#main-image {
+    position: absolute;
+    z-index: 5;
+}
+
+.container {
+    position: relative;
+}
