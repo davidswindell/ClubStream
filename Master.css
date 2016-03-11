@@ -1,0 +1,17 @@
+body {
+    background-color: #030303;
+}
+
+#title{
+    color:blue;
+    text-align:CENTER;
+}
+
+IMG.MainPicture{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    position:center;
+}
+
