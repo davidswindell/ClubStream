@@ -1,31 +1,31 @@
+body {
+    background-color: #030303;
+}
 
 #title{
     color:blue;
     text-align:CENTER;
 }
 
-/*Centers image*/
-IMG.properties {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-IMG.logo{
+IMG.MainPicture{
     display: block;
     margin-left: auto;
     margin-right: auto;
 
-    position:absolute;
-    z-index: 1;
+    position:center;
 }
 
-IMG.mainpic{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 
-    position: absolute;
-    z-index: -1;
+a{
+    color: white;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size:30px;
+
+
 }
 
+h1{
+    color: white;
+    font-size:20px;
+}
