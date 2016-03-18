@@ -29,3 +29,14 @@ h1{
     color: white;
     font-size:20px;
 }
+
+section{
+    width: 300px;
+    float: left;
+
+
+}
+
+#surround{
+    margin-left:300px;
+}
