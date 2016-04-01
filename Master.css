@@ -1,5 +1,6 @@
 body {
     background-color: #030303;
+    padding-bottom:60px;
 }
 
 #title{
@@ -47,3 +48,11 @@ h1{
 .club{margin-top:40px}
 .event{margin-top:40px ; margin-bottom:60px}
 
+footer{
+    padding-top: 300px;
+    position:relative;
+    bottom:0;
+    width:100%;
+    height:60px;
+    color: white;
+}
