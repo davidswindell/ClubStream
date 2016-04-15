@@ -1,5 +1,6 @@
 body {
     background-color: #030303;
+    padding-bottom:60px;
 }
 
 #title{
@@ -38,12 +39,20 @@ h1{
 
 #clubs{font-size:16px;color: white;}
 #events{}
-#live{}
+#live{width:60%}
 
 .clubpic{width:50% ; height:auto}
 .eventpic{width:100% ; height: auto;}
-#twitterpic{width: 70%; height:auto; margin-top:20px}
+
 
 .club{margin-top:40px}
 .event{margin-top:40px ; margin-bottom:60px}
 
+footer{
+    padding-top: 300px;
+    position:relative;
+    bottom:0;
+    width:100%;
+    height:60px;
+    color: white;
+}
