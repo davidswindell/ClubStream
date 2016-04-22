@@ -44,12 +44,12 @@ Proxy::init_client( 'MSjJJ4NsPzl7J0WRDW62x2lxu', ' x4daKq3806XClRIz7S7ZkiINAt0Pf
 // See: https://dev.twitter.com/docs/auth/obtaining-access-tokens
 // Obtaining an access token is beyond the scope of this library.
 // You could pull them from a database, or send the user through an OAuth flow, or just hard code them.
-Proxy::auth_client( 'Your authenticated access token', 'Your access token secret' );
+Proxy::auth_client( '720970014057238528-LEj85JQXp1EHz72DakYEQxSzwhPXq9V', 'lCiMLHmGWbMjXBmBvmd3bkeVKmAZ2glPTFHCvgJLuWHvH' );
 
 
 // Lock screen_name and user_id parameters in some API calls.
 // This prevents other people using some endpoints for their own Twitter feeds
-Proxy::lock_users( array( 'your screen_name' => 'your user_id' ) );
+Proxy::lock_users( array( 'ClubStreamABZ' => '720970014057238528' ) );
 
 
 // caching engine - currently only APC supported and is enabled by default
