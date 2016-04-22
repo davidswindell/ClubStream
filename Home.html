@@ -6,6 +6,41 @@
     <link rel="stylesheet" type="text/css" href="Master.css"/>
     <title>ClubStream</title>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+             var userids = [1684832137,769392811,474806305,32453533];
+            console.log(userids);
+            var swapped;
+            do {
+                swapped=false;
+                for(i=0;i<userids.length-1;i++){
+                    $.getJSON(
+                            "http://clubstream.azurewebsites.net/twitter/1.1/users/show.json?screen_name="+userids[i],
+                            function(followers_count){
+                                if (followers_count < ($.getJSON(
+                                                "http://clubstream.azurewebsites.net/twitter/1.1/users/show.json?screen_name="+userids[i+1],
+                                                function(followers_count){}))){
+                                    var temp = userids[i];
+                                    userids[i] = userids[i+1];
+                                    userids[i+1] = temp;
+                                    swapped = true;
+                                }
+                            }
+                    )
+//                    http://clubstream.azurewebsites.net/twitter/1.1/users/show.json
+                }
+            }while (swapped);
+
+            console.log(userids);
+        });
+
+
+
+    </script>
+
 </head>
 <body>
     <header id="PageHeader">
@@ -25,9 +60,9 @@
                     <p>Institute</p>
                 </div>
                 <div class="club">
-                    <img class="clubpic" src ="http://graph.facebook.com/323325391076153/picture?width=100&height=100"/>
-                    <p>Underground</p>
-                </div>
+
+
+                    </div>
                 <div class="club">
                     <img class="clubpic" src ="nox.jpg"/>
                     <p>Nox</p>
