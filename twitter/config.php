@@ -11,7 +11,7 @@
 
 // Restrict permitted HTTP methods.
 // It's recommended to remove POST support if your proxy is public.
-Proxy::match_methods('GET,POST' );
+Proxy::match_methods('GET,POST');
 
 
 // Restrict permitted HTTP Referrers.
@@ -35,21 +35,22 @@ Proxy::match_remote_addr('/^(127/.0/.0/.1|192/.168/.0/.\d+)$/');
 // The following configures the Twitter client for proxying request
 
 
+
 // Twitter application key and secret
 // See: https://dev.twitter.com/apps 
-Proxy::init_client( 'MSjJJ4NsPzl7J0WRDW62x2lxu', ' x4daKq3806XClRIz7S7ZkiINAt0PfJMdMToCzi7p6Uy0K2ScSy' );
+Proxy::init_client('MSjJJ4NsPzl7J0WRDW62x2lxu','x4daKq3806XClRIz7S7ZkiINAt0PfJMdMToCzi7p6Uy0K2ScSy');
 
 
 // Authenticated user access token.
 // See: https://dev.twitter.com/docs/auth/obtaining-access-tokens
 // Obtaining an access token is beyond the scope of this library.
 // You could pull them from a database, or send the user through an OAuth flow, or just hard code them.
-Proxy::auth_client( ' 720970014057238528-LEj85JQXp1EHz72DakYEQxSzwhPXq9V', ' lCiMLHmGWbMjXBmBvmd3bkeVKmAZ2glPTFHCvgJLuWHvH' );
+Proxy::auth_client('720970014057238528-LEj85JQXp1EHz72DakYEQxSzwhPXq9V','lCiMLHmGWbMjXBmBvmd3bkeVKmAZ2glPTFHCvgJLuWHvH');
 
 
 // Lock screen_name and user_id parameters in some API calls.
 // This prevents other people using some endpoints for their own Twitter feeds
-Proxy::lock_users( array( 'ClubStreamABZ' => '720970014057238528' ) );
+Proxy::lock_users( array('ClubStreamABZ' =>'720970014057238528'));
 
 
 // caching engine - currently only APC supported and is enabled by default

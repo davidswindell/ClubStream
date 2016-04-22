@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="Master.css"/>
     <title>ClubStream</title>
 
+
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
 
@@ -20,6 +22,7 @@
                     $.getJSON(
                             "http://clubstream.azurewebsites.net/twitter/1.1/users/show.json?screen_name="+userids[i],
                             function(followers_count){
+                                console.log(followers_count);
                                 if (followers_count < ($.getJSON(
                                                 "http://clubstream.azurewebsites.net/twitter/1.1/users/show.json?screen_name="+userids[i+1],
                                                 function(followers_count){}))){
