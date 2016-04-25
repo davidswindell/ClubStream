@@ -21,7 +21,7 @@ Proxy::match_referrer('!^https?://(?:localhost|clubstream.azurewebsites.net)/!')
 
 // Restrict permitted HTTP Origin headers.
 // Similar to above, but specifically for Ajax requests.
-Proxy::match_origin('!^https?://(?:localhost|mydomain\.com)!');
+Proxy::match_origin('!^https?://(?:localhost|clubstream.azurewebsites.net)!');
 
 
 // Restrict permitted remote IP addresses
