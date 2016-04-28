@@ -54,7 +54,11 @@ h1{
     border-style: dotted;
     border-width:2px;
     border-color:white;
-    padding-bottom:50px;
+    margin-top:40px;
+    padding-bottom:25px;
+    padding-top:25px;
+    padding-left:10px;
+    padding-right:10px;
     width:100%;
     height:auto;
 }
