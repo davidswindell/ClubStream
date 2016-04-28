@@ -78,7 +78,7 @@
                                     "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i]+"&count=1",
                                     function(data) {
                                         clubName = data[0].name;
-                                        console.log(clubname);
+                                        console.log(clubName);
 
                                         $('#clubs').append(
                                                 "<div class='club'>" + "<img class='clubpic' src='" + picURL + "'/>" + "<p>" + clubName + "</P></div>"
