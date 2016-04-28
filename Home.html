@@ -13,20 +13,8 @@
 
         $(document).ready(function(){
 
-             var userids = ['undergroundklub','NOXAberdeen','BabylonAberdeen','PRIORYNIGHTCLUB'];
+             var userids = ['undergroundklub','NOXAberdeen','BabylonAberdeen','PRIORYNIGHTCLUB','revabdn', 'tunnelsaberdeen'];
             console.log(userids);
-
-/*
-
-            $.getJSON("http://clubstream.azurewebsites.net/twipp-master/user_search.php?name=undergroundklub&count=1", function(data){
-                        var f = data;
-                        console.log(data[0].id);
-                        console.log(data[0].followers_count);
-                        console.log(f);
-                        console.log("AAAA");
-                    }
-            );
-*/
 
 
             //sort array of user ids by follower count
@@ -63,7 +51,6 @@
 
             //iterate through array and add club details to html for each user id
             for(i=0;i<userids.length;i++){
-
                 //add picture
                 var picURL = "placeholder.jpg";
                 var clubName = "Placeholder";
@@ -81,20 +68,8 @@
                                     "<div class='club'>" + "<img class='clubpic' src='" + picURL + "'/>" +  "<p>"+clubName+"</P></div>"
 
                             )
-
                         }
-
                 );
-
-
-                /*$('#clubs').append(
-
-                    "<div class='club'>" + "<img class='clubpic' src='" + picURL + "'/>" +  "<p>"+clubName+"</P></div>"
-
-                );*/
-
-
-
             }
 
             console.log(userids);
