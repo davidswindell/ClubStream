@@ -17,9 +17,9 @@
             console.log(userids);
 
 
-            var a = $.getJSON("http://clubstream.azurewebsites.net/twipp-master/user_search.php?name=undergroundklub&count=1", function(data){
+            $.getJSON("http://clubstream.azurewebsites.net/twipp-master/user_search.php?name=undergroundklub&count=1", function(data){
                         var f = data.followers_count;
-                        console.log(data);
+                        console.log(data.Search[0].id);
                         console.log(f);
                         console.log("AAAA");
                     }
