@@ -70,10 +70,11 @@
                         "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i]+"&count=1",
                         function(data){
                             picURL=data[0].profile_image_url;
+                            console.log(picURL);
                         }
                 );
 
-                console.log(picURL);
+
                 //add club name
                 var clubName = "";
                 $.getJSON(
