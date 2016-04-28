@@ -35,10 +35,14 @@
                     $.getJSON(
                             "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i]+"&count=1",
                             function(data){
-                                console.log(data.followers_count);
-                                if (data.followers_count < ($.getJSON(
-                                                "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i+1]+"&count=1",
-                                                function(followers_count){}))){
+                                console.log(data[0].followers_count);
+                                var followers2;
+                                $.getJSON(
+                                        "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i+1]+"&count=1",
+                                        function(data1){
+                                            followers2 = data1[0].followers_count;
+                                        })
+                                if (data[0].followers_count < followers1){
                                     var temp = userids[i];
                                     userids[i] = userids[i+1];
                                     userids[i+1] = temp;
