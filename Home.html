@@ -13,19 +13,28 @@
 
         $(document).ready(function(){
 
-             var userids = [1684832137,769392811,474806305,32453533];
+             var userids = ['undergroundklub','NOXAberdeen','BabylonAberdeen','PRIORYNIGHTCLUB'];
             console.log(userids);
+
+
+            $.getJSON(
+                    "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name=undergroundklub&count=1", function(data){
+                        console.log(data.id);
+                    }
+            );
+
+
             //sort array of user ids by follower count
             var swapped;
             do {
                 swapped=false;
                 for(i=0;i<userids.length-1;i++){
                     $.getJSON(
-                            "http://clubstream.azurewebsites.net/twipp/users/user_search.php?name="+userids[i],
+                            "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i]+"&count=1",
                             function(followers_count){
                                 console.log(followers_count);
                                 if (followers_count < ($.getJSON(
-                                                "http://clubstream.azurewebsites.net/twipp/users/user_search.php?name="+userids[i+1],
+                                                "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i+1]+"&count=1",
                                                 function(followers_count){}))){
                                     var temp = userids[i];
                                     userids[i] = userids[i+1];
@@ -45,9 +54,6 @@
                 //add club name
 
             }
-
-
-            console.log("aaah")
 
             console.log(userids);
         });
