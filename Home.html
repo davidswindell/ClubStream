@@ -33,8 +33,8 @@
                 for(i=0;i<userids.length-1;i++){
                     $.getJSON(
                             "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i]+"&count=1",
-                            function(followers_count){
-                                console.log(followers_count);
+                            function(data){
+                                console.log(data.followers_count);
                                 if (followers_count < ($.getJSON(
                                                 "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i+1]+"&count=1",
                                                 function(followers_count){}))){
