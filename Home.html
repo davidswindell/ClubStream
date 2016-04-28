@@ -19,7 +19,7 @@
 
             $.getJSON("http://clubstream.azurewebsites.net/twipp-master/user_search.php?name=undergroundklub&count=1", function(data){
                         var f = data;
-                        console.log(f.id);
+                        console.log(data[0].id);
                         console.log(f);
                         console.log("AAAA");
                     }
