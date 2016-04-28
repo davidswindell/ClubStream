@@ -42,7 +42,7 @@
                                         function(data1){
                                             followers2 = data1[0].followers_count;
                                         })
-                                if (data[0].followers_count < followers1){
+                                if (data[0].followers_count > followers1){
                                     var temp = userids[i];
                                     userids[i] = userids[i+1];
                                     userids[i+1] = temp;
