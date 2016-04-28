@@ -65,25 +65,19 @@
             for(i=0;i<userids.length;i++){
 
                 //add picture
+                var clubName = "Placeholder";
                 var picURL = "placeholder.jpg";
                 $.getJSON(
                         "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i]+"&count=1",
-                        function(data1){
-                            picURL=data1[0].profile_image_url;
+                        function(data){
+                            picURL=data[0].profile_image_url;
+                            clubName = data[0].name;
                             console.log(picURL);
+                            console.log(clubName)
 
-                            //add club name
-                            var clubName = "";
-                            $.getJSON(
-                                    "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i]+"&count=1",
-                                    function(data2) {
-                                        clubName = data2[0].name;
-                                        console.log(clubName);
-
-                                        $('#clubs').append(
-                                                "<div class='club'>" + "<img class='clubpic' src='" + picURL + "'/>" + "<p>" + clubName + "</P></div>"
-                                        )
-                                    })
+                            $('#clubs').append(
+                                    "<div class='club'>" + "<img class='clubpic' src='" + picURL + "'/>" + "<p>" + clubName + "</P></div>"
+                            )
                         }
                 );
 
