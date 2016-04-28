@@ -41,7 +41,7 @@ p{
 .container{width: 60% ; position: relative;}
 
 #clubs{font-size:16px;color: white;}
-#events{}
+#events{font-size:16px; color: white;}
 #live{width:60%}
 
 .clubpic{width:50% ; height:auto}
