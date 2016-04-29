@@ -75,6 +75,7 @@ h1{
     position: relative;
     text-align: center;
     width: 100%;
+    display: inline-block;
 }
 
 .footer {
