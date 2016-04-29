@@ -126,12 +126,12 @@
                     var lat = locations[i][1];
                     var long = locations[i][2];
 
-                    latlngsete = new google.maps.LatLng(lat, long);
+                    latlngset = new google.maps.LatLng(lat, long);
 
                     var marker = new google.maps.Marker({
-                        map: mapProp, title: clubname, position: latlngset
+                        map: map, title: clubname, position: latlngset
                     });
-                    mapProp.setCenter(marker.getPosition());
+                    map.setCenter(marker.getPosition());
 
                     var content = "Club: " + clubname;
 
