@@ -72,7 +72,7 @@ h1{
 .footerholder {
     background: black;
     bottom: 0;
-    position: absolute;
+    position: relative;
     text-align: center;
     width: 100%;
 }
