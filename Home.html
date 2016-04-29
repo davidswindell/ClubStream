@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Master.css"/>
     <title>ClubStream</title>
-    
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCmBC826mBy_v4dfpHekO2I3begMgwKR8o"></script>
     <script>
 
         $(document).ready(function(){
@@ -90,8 +93,29 @@
 
         });
 
+    </script>
 
+    <script>
+        var myCenter=new google.maps.LatLng(57.144601, -2.102100);
 
+        function initialize()
+        {
+            var mapProp = {
+                center:myCenter,
+                zoom:5,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+            var marker=new google.maps.Marker({
+                position:myCenter,
+            });
+
+            marker.setMap(map);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
 </head>
@@ -133,31 +157,8 @@
     </div>
     </center>
 
-    <script>
-        var Institute=new google.maps.LatLng(57.144601, -2.102100);
-
-        function initialize()
-        {
-            var mapProp = {
-                center:Institute,
-                zoom:5,
-                mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-
-            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-            var marker=new google.maps.Marker({
-                position:Institute,
-            });
-
-            marker.setMap(map);
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-
     <div id="googleMap" style="width:1000px;height:500px;"></div>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCmBC826mBy_v4dfpHekO2I3begMgwKR8o"></script>
+
 
 </body>
 
