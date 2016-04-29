@@ -102,59 +102,49 @@
 
         function initialize()
         {
+            var locations = [
+                    ['Institute Nightclub', 57.144601, -2.102100],
+                    ['Nox', 57.143153, -2.108720],
+                    ['The Priory', 57.147406, -2.101817]
+            ];
             var mapProp = {
-                center:institute,
+                center: new google.maps.LatLng(57.144601, -2.102100),
                 zoom:15,
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             };
 
             var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-            var marker1=new google.maps.Marker({
-                position:institute,
-                title: "Institute"
-            });
-            var marker2=new google.maps.Marker({
-                position:nox,
-                title: "Nox"
-            });
-            var marker3=new google.maps.Marker({
-                position:priory,
-                title: "The Priory"
-            });
+            setMarkers(map, locations);
 
-            var instituteInfoString = '<div id="content">'+
-                    '<div id="siteNotice">'+
-                    '</div>'+
-                    '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-                    '<div id="bodyContent">'+
-                    '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-                    'sandstone rock formation in the southern part of the '+
-                    'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-                    'south west of the nearest large town, Alice Springs; 450&#160;km '+
-                    '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-                    'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-                    'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-                    'Aboriginal people of the area. It has many springs, waterholes, '+
-                    'rock caves and ancient paintings. Uluru is listed as a World '+
-                    'Heritage Site.</p>'+
-                    '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-                    'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-                    '(last visited June 22, 2009).</p>'+
-                    '</div>'+
-                    '</div>';
+            function setMarkers(map, locations){
+                var marker, i;
 
-            var instituteInfo = new google.maps.InfoWindow({
-                content: instituteInfoString
-            });
+                for (i = 0; i < locations.length; i++)
+                {
+                    var clubname = locations[i][0];
+                    var lat = locations[i][1];
+                    var long = locations[i][2];
 
-            marker1.addListener('click', function() {
-                instituteInfo.open(map, marker);
-            });
+                    latlngsete = new google.maps.LatLng(lat, long);
 
-            marker1.setMap(map);
-            marker2.setMap(map);
-            marker3.setMap(map);
+                    var marker = new google.maps.Marker({
+                        map: mapProp, title: clubname, position: latlngset
+                    });
+                    mapProp.setCenter(marker.getPosition());
+
+                    var content = "Club: " + clubname;
+
+                    var infowindow = new google.maps.InfoWindow();
+
+                    google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+                        return function() {
+                            infowindow.setContent(content);
+                            infowindow.open(map,marker);
+                        };
+                    })(marker,content,infowindow));
+                }
+            }
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
