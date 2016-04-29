@@ -105,7 +105,11 @@
             var locations = [
                     ['Institute Nightclub', 57.144601, -2.102100],
                     ['Nox', 57.143153, -2.108720],
-                    ['The Priory', 57.147406, -2.101817]
+                    ['The Priory', 57.147406, -2.101817],
+                    ['Underground Klub', 57.145276, -2.101950],
+                    ['Babylon', 57.142869, -2.112599],
+                    ['Revolution', 57.147023, -2.101543],
+                    ['Tunnels', 57.146844, -2.097479]
             ];
             var mapProp = {
                 center: new google.maps.LatLng(57.144601, -2.102100),
@@ -133,7 +137,7 @@
                     });
                     map.setCenter(marker.getPosition());
 
-                    var content = "Club: " + clubname;
+                    var content = clubname;
 
                     var infowindow = new google.maps.InfoWindow();
 
