@@ -72,13 +72,13 @@ h1{
 .footerholder {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
-    position: fixed;
+    position: absolute;
     text-align: center;
     width: 100%;
 }
 
 .footer {
-    background: none repeat scroll 0 0 blue;
+    background: black;
     height: 100px;
     margin: auto;
     width: 400px;
