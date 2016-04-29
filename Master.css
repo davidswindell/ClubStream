@@ -69,13 +69,17 @@ h1{
 
 }
 
+.footerholder {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
 
-footer{
-    padding-top: 300px;
-    position:relative;
-    bottom:0;
-    width:100%;
-    height:60px;
-    color: white;
-
+.footer {
+    background: none repeat scroll 0 0 blue;
+    height: 100px;
+    margin: auto;
+    width: 400px;
 }
