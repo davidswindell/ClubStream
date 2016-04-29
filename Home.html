@@ -123,6 +123,13 @@
                 title: "The Priory"
             });
 
+            var instituteInfo = new google.maps.InfoWindow({
+                content: "<br> Institute Night Club</br>"
+            });
+            marker1.addListener('click', function() {
+                instituteInfo.open(map, marker);
+            });
+
             marker1.setMap(map);
             marker2.setMap(map);
             marker3.setMap(map);
