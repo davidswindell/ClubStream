@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Master.css"/>
+    <title>ClubStream</title>
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+             var userids = ['undergroundklub','NOXAberdeen','BabylonAberdeen','PRIORYNIGHTCLUB','revabdn', 'tunnelsaberdeen'];
+            console.log(userids);
+
+
+            //sort array of user ids by follower count
+/*            var swapped;
+            do {
+                swapped=false;
+                for(i=0;i<userids.length-1;i++){
+                    var followers1 =0;
+                    var followers2=0;;
+                    $.getJSON(
+                            "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i]+"&count=1",
+                            function(data1){
+                                followers1=data1[0].followers_count;
+                                console.log("1: " + followers1);
+                            }
+                    )
+                    $.getJSON(
+                            "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i+1]+"&count=1",
+                            function(data2){
+                                followers2 = data2[0].followers_count;
+                                console.log("2: " + followers2);
+                            })
+
+                    if (followers1 > followers2){
+                        var temp = userids[i];
+                        userids[i] = userids[i+1];
+                        userids[i+1] = temp;
+                        swapped = true;
+                        console.log("swapped");
+                    }
+                }
+            }while (swapped);*/
+
+            //iterate through array and add club details to html for each user id
+            for(i=0;i<userids.length;i++){
+                //add picture
+                var picURL = "placeholder.jpg";
+                var clubName = "Placeholder";
+                $.getJSON(
+                        "http://clubstream.azurewebsites.net/twipp-master/user_search.php?name="+userids[i]+"&count=1",
+                        function(data){
+                            picURL=data[0].profile_image_url;
+                            console.log(picURL);
+                            clubName=data[0].name;
+                            console.log(clubName);
+
+
+                            $('#clubs').append(
+
+                                    "<div class='club'>" + "<img class='clubpic' src='" + picURL + "'/>" +  "<p>"+clubName+"</P></div>"
+
+                            )
+                        }
+                );
+            }
+
+
+            //iterate through array and add last tweet to central column
+            for(i=0;i<userids.length;i++){
+                var tweet = "placeholder tweet";
+                $.getJSON(
+                        "http://clubstream.azurewebsites.net/twipp-master/user_timeline.php?name="+userids[i]+"&count=1",
+                        function(data){
+
+                            tweet=data[0].text;
+
+                            $('#events').append(
+                                    "<div class='event'>" + "<p class='tweet'>" + tweet + "</p>"+"</div>"
+                            )
+
+                        }
+                );
+
+            }
+
+        });
+
+
+
+    </script>
+
+</head>
+<body>
+    <header id="PageHeader">
+        <IMG class="MainPicture" src="Main.png"/>
+    </header>
+
+
+    <center>
+    <div class="container">
+
+        <!-- Left column containing clubs -->
+        <div id="column-left">
+            <h1>Top Venues</h1>
+            <div id="clubs">
+                <!-- To be filled with club names and pictures from twitter by JQuery-->
+            </div>
+
+        </div>
+
+        <!-- Centre column containing events -->
+        <div id="column-center">
+            <h1>Recent Activity</h1>
+            <div id="events">
+                <!-- To be filled with recent tweets from twitter by JQuery-->
+            </div>
+        </div>
+
+        <!-- Right column containing twitter feed -->
+        <div id="column-right">
+            <h1>Live Feed</h1>
+            <div id="live">
+                <a class="twitter-timeline" href="https://twitter.com/search?q=%23TheGarage%20AND%20%23aberdeen%20OR%20%23NOX%20AND%20%23aberdeen%20OR%20%23institute%20AND%20%23aberdeen" data-widget-id="720979262937899012">Tweets about #TheGarage AND #aberdeen OR #NOX AND #aberdeen OR #institute AND #aberdeen</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div>
+
+    </div>
+    </center>
+
+    <div id="map"></div>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmBC826mBy_v4dfpHekO2I3begMgwKR8o&callback=initMap"
+            async defer></script>
+
+</body>
+
+</html>
+
