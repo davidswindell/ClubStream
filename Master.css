@@ -70,7 +70,7 @@ h1{
 }
 
 .footerholder {
-    background: none repeat scroll 0 0 transparent;
+    background: black;
     bottom: 0;
     position: absolute;
     text-align: center;
