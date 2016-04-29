@@ -80,6 +80,7 @@ h1{
 .footer {
     background: black;
     height: 100px;
-    margin: auto;
+    margin-left: -50px;
+
     width: 400px;
 }
